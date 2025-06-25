@@ -21,7 +21,10 @@ const router = createBrowserRouter([
       { path: '*', element: <NotFoundPage /> },
     ],
   },
-]);
+], {
+  basename: '/Lisa-Borger' 
+});
+
 
 
 createRoot(document.getElementById('root')).render(

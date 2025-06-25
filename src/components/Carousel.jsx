@@ -7,12 +7,12 @@ import 'swiper/css/pagination';
 
 // Image data
 const images = [
-  { id: 1, src: '/2005_exhibition/wall_1/barreerreef008.jpg', alt: 'Barrier Reef' },
-  { id: 2, src: '/2005_exhibition/wall_1/freespirit004.jpg', alt: 'Free Spirit' },
-  { id: 3, src: '/2005_exhibition/wall_1/frienlypelican002.jpg', alt: 'Friendly Pelican' },
-  { id: 4, src: '/2005_exhibition/wall_1/rebland001.jpg', alt: 'Rebland' },
-  { id: 5, src: '/2005_exhibition/wall_1/stimmungen005.jpg', alt: 'Stimmungen' },
-  { id: 6, src: '/2005_exhibition/wall_1/waratah009.jpg', alt: 'Waratah' },
+  { id: 1, src: '2005_exhibition/wall_1/barreerreef008.jpg', alt: 'Barrier Reef' },
+  { id: 2, src: '2005_exhibition/wall_1/freespirit004.jpg', alt: 'Free Spirit' },
+  { id: 3, src: '2005_exhibition/wall_1/frienlypelican002.jpg', alt: 'Friendly Pelican' },
+  { id: 4, src: '2005_exhibition/wall_1/rebland001.jpg', alt: 'Rebland' },
+  { id: 5, src: '2005_exhibition/wall_1/stimmungen005.jpg', alt: 'Stimmungen' },
+  { id: 6, src: '2005_exhibition/wall_1/waratah009.jpg', alt: 'Waratah' },
 ];
 
 const Carousel = () => {
