@@ -1,16 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-
 
 export default function Navbar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const sidebarRef = useRef(null);
+
+    // Close sidebar when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+                setIsSidebarOpen(false);
+            }
+        };
+
+        // Only add listener when sidebar is open on mobile
+        if (isSidebarOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isSidebarOpen]);
+
+    // Close sidebar when a link is clicked (mobile only)
+    const handleLinkClick = () => {
+        setIsSidebarOpen(false);
+    };
 
     return (
         <div>
-
             <button
                 type="button"
-                className="fixed items-center p-2 mt-2 ms-3 text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="fixed items-center p-1 mt-2 ms-4 text-sm text-gray-700 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <span className="sr-only">Open sidebar</span>
                     <svg className="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -18,16 +40,18 @@ export default function Navbar() {
                     </svg>
             </button>
 
-
-
-
-
-            <aside id="default-sidebar" className={`${isSidebarOpen ? " fixed top-12.5" : "hidden"} lg:fixed lg:block top-0 left-0 z-40 w-56 h-screen`} ariaLabel="Sidebar">
+            <aside 
+                ref={sidebarRef}
+                id="default-sidebar" 
+                className={`${isSidebarOpen ? " fixed top-12.5" : "hidden"} lg:fixed lg:block top-0 left-0 z-40 w-56 h-screen`} 
+                aria-label="Sidebar"
+            >
                 <div className="h-full px-3 py-4 overflow-y-auto bg dark:bg-gray-800">
-                    <ul className="space-y-2 font-medium text-black">
+                    <ul className="space-y-2 font-medium text-black bg-white/95 md:bg-white/0 rounded-3xl">
                         <li>
                             <NavLink
                                 to="/"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) => `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''}`
                                 }
                             >
@@ -46,6 +70,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/about-me"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -65,6 +90,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/2005"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -84,6 +110,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/2006"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -103,6 +130,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/2007"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -122,7 +150,8 @@ export default function Navbar() {
 
                         <li>
                             <NavLink
-                                to="/enterior"
+                                to="/enteriors"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -143,6 +172,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/feedback"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
@@ -162,6 +192,7 @@ export default function Navbar() {
                         <li>
                             <NavLink
                                 to="/contact"
+                                onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
                                     }`
