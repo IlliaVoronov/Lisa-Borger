@@ -12,17 +12,11 @@ import EnteriorsPage from './pages/EnteriorsPage.jsx'
 import Exhibition2006Page from './pages/Exhibition2006Page.jsx'
 import Paintings2007Page from './pages/Paintings2007Page.jsx'
 import ContactMePage from './pages/ContactMePage.jsx'
-import { RedirectHandler } from './components/RedirectHandler.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: (
-      <>
-        <RedirectHandler />
-        <App />
-      </>
-    ),
+    element: <App />,
     children: [
       { index: true, element: <Home /> },
       { path: 'about-me', element: <AboutMePage /> },
@@ -31,7 +25,7 @@ const router = createBrowserRouter([
       { path: '2007', element: <Paintings2007Page /> },
       { path: 'feedback', element: <FeedbackPage /> },
       { path: 'enteriors', element: <EnteriorsPage /> },
-      { path: 'contact', element: <ContactMePage /> },
+      { path: 'contact-me', element: <ContactMePage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

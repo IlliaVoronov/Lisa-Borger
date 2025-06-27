@@ -191,7 +191,7 @@ export default function Navbar() {
                         </li>
                         <li>
                             <NavLink
-                                to="/contact"
+                                to="/contact-me"
                                 onClick={handleLinkClick}
                                 className={({ isActive }) =>
                                     `flex items-center gap-2 p-2 rounded-lg bg-gray-100 hover:bg-gray-200 group transition-all ${isActive ? 'text-red-600' : ''
