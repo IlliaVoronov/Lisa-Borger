@@ -8,7 +8,7 @@ export default function AboutMePage() {
             <PageTitle />
             <div className="flex h-auto w-90% text-center flex-col items-center gap-4 m-5 p-7 border border-gray-800 rounded shadow-2xl shadow-gray-500 bg-gray-600 lg:w-[58%] xl:w-[65%]">
                 <img
-                    src={`${import.meta.env.BASE_URL}/licagonlag001.jpg`}
+                    src={`img/licagonlag001.jpg`}
                     alt="Image of younger Lisa "
                     className="w-[60vw] sm:w-[30vw] lg:w-[20vw] h-auto max-w-full object-cover"
                 />

@@ -11,7 +11,7 @@ function Home() {
                 <h4 className="text-xl sm:text-3xl">Thank you for visiting this site!</h4>
                 <p className="sm:text-xl">Here you will find everything there is to know about my work and exhibitions.</p>
                 <img
-                    src={`${import.meta.env.BASE_URL}/welcome.jpg`}
+                    src={`img/welcome.jpg`}
                     alt="Image of Lisa Painting"
                     className="object-cover w-auto h-[100vw] sm:h-[70vw] md:h-[60vw] lg:h-[45vw] xl:h-[30vw]"
                     onLoad={() => console.log('Image loaded successfully')}

@@ -9,7 +9,7 @@ export default function EnteriorsPage() {
                 <h2 className="text-2xl sm:text-4xl">Enteriors</h2>
                 <p className="font-sans text-xl sm:text-2xl"> Are you looking for a personal work of art fitting your home? Are you looking for a gift for a special person? Let me know! Together we can discuss your wishes and make dreams come true! </p>
                 <img
-                    src={`${import.meta.env.BASE_URL}/Enteriors.jpg`}
+                    src={`img/Enteriors.jpg`}
                     alt="Enterior painting"
                     className="w-full h-auto max-w-full object-cover"
                 />
