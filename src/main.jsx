@@ -12,6 +12,7 @@ import EnteriorsPage from './pages/EnteriorsPage.jsx'
 import Exhibition2006Page from './pages/Exhibition2006Page.jsx'
 import Paintings2007Page from './pages/Paintings2007Page.jsx'
 import ContactMePage from './pages/ContactMePage.jsx'
+import { Analytics } from '@vercel/analytics/react';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: '/' 
+  basename: '/'
 });
 
 
@@ -38,5 +39,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </StrictMode>,
 )
