@@ -6,6 +6,11 @@ body html {
   padding: 0;
 }
 
+@theme {
+  --color-orange-primary: oklch(72% 40% 66deg);
+  --color-orange-default: oklch(78% 43% 66deg);
+}
+
 @layer utilities {
   @keyframes blink {
     0%,
