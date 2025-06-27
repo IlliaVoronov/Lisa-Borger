@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: '/Lisa-Borger' 
+  basename: '/' 
 });
 
 
