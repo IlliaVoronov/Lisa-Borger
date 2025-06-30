@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../node_modules/tailwindcss/index.css";
+@import "tailwindcss-animated";
 
 body html {
   margin: 0;

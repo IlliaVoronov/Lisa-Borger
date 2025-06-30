@@ -63,7 +63,7 @@ export default function CommentsList() {
       <h1 className="text-2xl font-bold mb-4 mt-11 lg:mt-0">Comments ({comments.length} total)</h1>
       <div className="space-y-4">
         {currentComments.map((comment, index) => (
-          <div key={index} className="bg-white p-4 rounded-xl shadow">
+          <div key={index} className="bg-white p-4 rounded-xl shadow animate-fade-up animate-once animate-ease-linear animate-duration-400">
             <div className="text-gray-700 font-semibold">{comment.name}</div>
             <div className="text-sm text-gray-500">
               {comment.date} at {comment.time}
